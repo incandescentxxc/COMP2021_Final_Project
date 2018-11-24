@@ -18,13 +18,7 @@ public class Board {
     public Board() {
         for (int i = 0; i < WIDTH; i++) {
             for (int k = 0; k < LENGTH; k++) {
-                if ((i == 2 && k == 0) || (i == 2 && k == 8) || (i == 3 && k == 1) || (i == 3 && k == 7) || (i == 4 && k == 0)
-                        || (i == 4 && k == 8))
-                    board[i][k] = new dataCell(i, k, null);
-                else if ((i == 3 && (k == 0 || k == 8))) board[i][k] = new dataCell(i, k, null);
-                else if ((i >= 2 && i <= 3 && k >= 3 && k <= 5) || (i >= 4 && i <= 5 && k >= 3 && k <= 5))
-                    board[i][k] = new dataCell(i, k, null);
-                else if (i == 0 && k == 0) board[i][k] = new dataCell(i, k, new Tiger(0));
+                if (i == 0 && k == 0) board[i][k] = new dataCell(i, k, new Tiger(0));
                 else if (i == 6 && k == 8) board[i][k] = new dataCell(i, k, new Tiger(1));
                 else if (i == 1 && k == 1) board[i][k] = new dataCell(i, k, new Cat(0));
                 else if (i == 5 && k == 7) board[i][k] = new dataCell(i, k, new Cat(1));
@@ -40,6 +34,7 @@ public class Board {
                 else if (i == 0 && k == 8) board[i][k] = new dataCell(i, k, new Lion(1));
                 else if (i == 6 && k == 2) board[i][k] = new dataCell(i, k, new Rat(0));
                 else if (i == 0 && k == 6) board[i][k] = new dataCell(i, k, new Rat(1));
+                else board[i][k] = new dataCell(i, k, null);
             }
 
         }
